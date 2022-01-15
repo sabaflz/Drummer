@@ -1,11 +1,13 @@
 $("body").on("click", function(event) {
   let clickedButton = event.target.classList[0];
   playSound(clickedButton);
+  addPlayAnimation(clickedButton);
 });
 
 $("body").keydown(function(event) {
-  let clickedButton = String.fromCharCode(event.which).toLowerCase();
+  let clickedButton = event.key;
   playSound(clickedButton);
+  addPlayAnimation(clickedButton);
 });
 
 function playSound(key) {
@@ -34,7 +36,7 @@ function playSound(key) {
       fileName = "snare";
       break;
     default: {
-      console.log("The " + key + "was clicked!");
+      console.log("The " + key + " was clicked!");
       return;
     }
   }
@@ -43,4 +45,11 @@ function playSound(key) {
   let audio = new Audio("sounds/" + fileName + ".mp3");
   audio.play();
 
+}
+
+function addPlayAnimation(key){
+  $("." + key).addClass("pressed");
+  setTimeout(function(){
+    $("." + key).removeClass("pressed");
+  }, 100);
 }
