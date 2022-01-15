@@ -1,0 +1,27 @@
+body {
+  background-color: #DDDDDD;
+  color: #a60c40;
+  font-family: 'Montserrat', sans-serif;
+  margin: 3%;
+  text-align: center;
+}
+
+.drumBox {
+  margin: 15% 3% 15%;
+}
+
+label {
+  font-size: 2rem;
+  /* font-weight: bold; */
+  margin-bottom: 10%;
+}
+
+img {
+  height: 150px;
+  width: 150px;
+}
+
+footer {
+  color: #b3b3b3;
+  margin: 5% auto auto;
+}
